@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAKE HUNTER - Affiche 1</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74ABE2, #5563DE);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(0,0,0,0.3);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    button {
+      background: #fff;
+      color: #333;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    button:hover {
+      background: #ddd;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>FAKE HUNTER - Affiche 1</h1>
+    <p><strong>Énigme :</strong> "Je suis très prisé des élèves, mais peu aimé des professeurs."</p>
+    <p><strong>Rébus :</strong> [Un chat] + [un G] + [quelqu’un qui pète]</p>
+    <p>Quel est le mot à trouver ?</p>
+    <div>
+      <button onclick="checkAnswer('Snapchat')">Snapchat</button>
+      <button onclick="checkAnswer('ChatGPT')">ChatGPT</button>
+      <button onclick="checkAnswer('TikTok')">TikTok</button>
+    </div>
+    <div id="feedback" class="message"></div>
+    <div id="indice" class="message"></div>
+  </div>
+  <script>
+    function checkAnswer(answer) {
+      var feedback = document.getElementById('feedback');
+      var indice = document.getElementById('indice');
+      if(answer === 'ChatGPT'){
+        feedback.textContent = "Bravo ! La réponse est correcte.";
+        indice.innerHTML = "Indice suivant : Cherchez l'affiche près de la zone de voyage ou du tableau d'affichage du CDI.";
+      } else {
+        feedback.textContent = "Mauvaise réponse. Réessaie !";
+        indice.textContent = "";
+      }
+    }
+  </script>
+</body>
+</html>
